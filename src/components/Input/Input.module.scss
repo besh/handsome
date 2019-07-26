@@ -1,14 +1,33 @@
 @import "styles/_theme.scss";
 
 .root {
+  // TODO: should apply basaeline fonts through the theme somehow
+  font-family: $primary-font;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  // TODO: should have padding/margin vars
   padding: 0.5rem;
   border: 1px solid $primary-color;
   color: $secondary-color;
-  font-family: $primary-font;
   outline: none;
 
   &:hover,
   &:focus {
     border-color: transparent;
   }
+
+  &:focus + .label {
+    opacity: 0;
+  }
+}
+
+.label {
+  margin-top: 0.5rem;
+  opacity: 1;
+
+  // TODO: should have font scale vars
+  font-size: 0.85rem;
 }

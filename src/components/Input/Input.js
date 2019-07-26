@@ -12,12 +12,16 @@ const Input = forwardRef((props, ref) => {
   };
 
   return (
-    <input
-      className={styles.root}
-      onChange={handleOnChange}
-      value={currentValue}
-      {...other}
-    />
+    <div className={styles.root}>
+      <input
+        className={styles.input}
+        onChange={handleOnChange}
+        value={currentValue}
+        ref={ref}
+        {...other}
+      />
+      {labelText && <label className={styles.label}>{labelText}</label>}
+    </div>
   );
 });
 
