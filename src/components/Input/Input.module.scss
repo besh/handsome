@@ -1,16 +1,19 @@
 @import "styles/_theme.scss";
 
+$border-width: 1px;
+
 .root {
   // TODO: should apply basaeline fonts through the theme somehow
   font-family: $primary-font;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .input {
   // TODO: should have padding/margin vars
   padding: 0.5rem;
-  border: 1px solid $primary-color;
+  border: $border-width solid $primary-color;
   color: $secondary-color;
   outline: none;
 
@@ -30,4 +33,24 @@
 
   // TODO: should have font scale vars
   font-size: 0.85rem;
+}
+
+.passwordIcon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 0.85rem;
+  z-index: 1;
+}
+
+.hidePassword {
+  position: absolute;
+  top: $border-width;
+  left: $border-width;
+  width: calc(100% - (#{$border-width} * 2));
+  height: 29px;
+  background: white;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  pointer-events: none;
 }
