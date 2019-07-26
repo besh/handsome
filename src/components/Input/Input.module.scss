@@ -1,7 +1,14 @@
 @import "styles/_theme.scss";
 
 .root {
+  padding: 0.5rem;
   border: 1px solid $primary-color;
   color: $secondary-color;
   font-family: $primary-font;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    border-color: transparent;
+  }
 }
