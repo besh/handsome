@@ -1,7 +1,6 @@
 import React, { forwardRef, useState, Fragment } from "react";
 import PropTypes from "prop-types";
 import styles from "./Input.module.scss";
-import { __values } from "tslib";
 
 const Input = forwardRef((props, ref) => {
   const {
@@ -27,7 +26,7 @@ const Input = forwardRef((props, ref) => {
     setShowPassword(!showPassword);
   };
 
-  const passwordIcon = showPassword ? "o__o" : "-__-";
+  const passwordIcon = showPassword ? "๏_๏" : "✖_✖";
   const _type = typeIsPassword ? "text" : type;
 
   return (

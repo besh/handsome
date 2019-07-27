@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import Input from "./Input";
 
 const wrapperStyle = {
-  width: "500px"
+  ["max-width"]: "500px"
 };
 
 storiesOf("Input", module)
