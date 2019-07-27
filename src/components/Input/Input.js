@@ -24,6 +24,11 @@ const Input = forwardRef((props, ref) => {
   };
 
   const handleOnKeyDown = e => {
+    if (type === "number") {
+      e.preventDefault();
+      return;
+    }
+
     if (keyed.getCode(e) === keyed.Tab) {
       e.preventDefault();
     }

@@ -17,4 +17,12 @@ storiesOf("Input", module)
   ))
   .add("Password field", () => (
     <Input labelText="Password" type="password" style={wrapperStyle} />
+  ))
+  .add("Number field", () => (
+    <Input
+      labelText="Date (Unix timestamp)"
+      placeholder="e.g. 552540647"
+      type="number"
+      style={wrapperStyle}
+    />
   ));
