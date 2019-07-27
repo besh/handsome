@@ -30,6 +30,10 @@ const Input = forwardRef((props, ref) => {
     onKeyDown(e);
   };
 
+  const handleSecureInput = e => {
+    e.preventDefault();
+  };
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -44,6 +48,9 @@ const Input = forwardRef((props, ref) => {
         onChange={handleOnChange}
         value={currentValue}
         onKeyDown={handleOnKeyDown}
+        onPaste={handleSecureInput}
+        onCopy={handleSecureInput}
+        onCut={handleSecureInput}
         type={_type}
         ref={ref}
         {...other}
