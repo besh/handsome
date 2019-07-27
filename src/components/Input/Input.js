@@ -1,5 +1,6 @@
 import React, { forwardRef, useState, Fragment } from "react";
 import PropTypes from "prop-types";
+import keyed from "utils/keyedboard";
 import styles from "./Input.module.scss";
 
 const Input = forwardRef((props, ref) => {
@@ -8,6 +9,7 @@ const Input = forwardRef((props, ref) => {
     type,
     value,
     onChange,
+    onKeyDown,
     labelText,
     style,
     ...other
@@ -18,11 +20,17 @@ const Input = forwardRef((props, ref) => {
 
   const handleOnChange = e => {
     setCurrentValue(e.target.value);
-    onChange(e.target.value);
+    onChange(e);
+  };
+
+  const handleOnKeyDown = e => {
+    if (keyed.getCode(e) === keyed.Tab) {
+      e.preventDefault();
+    }
+    onKeyDown(e);
   };
 
   const togglePasswordVisibility = () => {
-    console.log(ref);
     setShowPassword(!showPassword);
   };
 
@@ -35,6 +43,7 @@ const Input = forwardRef((props, ref) => {
         className={styles.input}
         onChange={handleOnChange}
         value={currentValue}
+        onKeyDown={handleOnKeyDown}
         type={_type}
         ref={ref}
         {...other}
@@ -68,11 +77,13 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   labelText: PropTypes.string,
   type: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  onKeyDown: PropTypes.func
 };
 
 Input.defaultProps = {
   onChange: () => {},
+  onKeyDown: () => {},
   placeholder: "",
   value: "",
   type: "text"
