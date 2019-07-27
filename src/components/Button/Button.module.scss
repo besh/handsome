@@ -1,0 +1,36 @@
+@import "styles/_theme.scss";
+
+.root {
+  font-family: $primary-font;
+  letter-spacing: 0.025rem;
+  font-size: 0.85rem;
+  min-height: 2.5rem;
+  min-width: 10rem;
+  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+  outline: none;
+  cursor: default;
+  border: none;
+}
+
+.primary {
+  color: $secondary-color;
+  background: none;
+  text-decoration: underline;
+}
+
+.secondary {
+  border: 1px solid transparent;
+  background: $primary-color;
+  color: $tertiary-color;
+
+  &:hover,
+  &:focus {
+    background: none;
+    border-color: $primary-color;
+  }
+}
+
+.tertiary {
+  background: $danger-color;
+  color: white;
+}
