@@ -1,0 +1,6 @@
+.root {
+  // TODO: override in a nicer way. I don't think css modules will work out long term
+  [class*="Input_root"] {
+    margin-bottom: 1rem;
+  }
+}
