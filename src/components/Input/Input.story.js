@@ -11,7 +11,7 @@ storiesOf("Input", module)
   .add("With label", () => (
     <Input
       labelText="Full name"
-      placeholder="E.g. Jake M'lady"
+      placeholder="E.g. Walter Waynerston"
       style={wrapperStyle}
     />
   ))
