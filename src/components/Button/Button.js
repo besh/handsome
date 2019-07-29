@@ -16,7 +16,8 @@ Button.propTypes = {
     STYLE_TYPES.primary,
     STYLE_TYPES.secondary,
     STYLE_TYPES.tertiary
-  ])
+  ]),
+  className: PropTypes.string
 };
 
 Button.defaultProps = {

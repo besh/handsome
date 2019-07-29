@@ -1,0 +1,79 @@
+@import "styles/_theme.scss";
+
+$modal-width: 550px;
+
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.modal {
+  left: 50%;
+  top: 10%;
+  margin-left: calc(-#{$modal-width} / 2);
+  width: $modal-width;
+  position: absolute;
+  z-index: 2;
+  background: white;
+  font-family: $primary-font;
+  color: $secondary-color;
+  padding: 2rem 1.5rem;
+  min-height: 250px;
+  font-size: 0.85rem;
+}
+
+.title {
+  font-weight: 200;
+  font-size: 1rem;
+  margin: 0 0 2rem;
+  color: $secondary-color;
+  border-left: 2px solid $primary-color;
+  line-height: 1;
+  padding-left: 0.5rem;
+  padding: 0.25rem 0 0.25rem 0.5rem;
+}
+
+.close {
+  position: absolute;
+  z-index: 3;
+  bottom: 1rem;
+  right: 1rem;
+  color: $primary-color;
+  text-decoration: none;
+  padding: 0;
+  min-width: initial;
+  min-height: initial;
+  font-size: 0.7rem;
+}
+
+.download {
+  position: absolute;
+  z-index: 3;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: $secondary-color;
+  text-decoration: none;
+  padding: 0;
+  min-width: initial;
+  min-height: initial;
+  width: 14px;
+  border-top: 0;
+  height: 17px;
+  line-height: 0;
+  font-size: 1rem;
+  display: block;
+  cursor: pointer;
+}
